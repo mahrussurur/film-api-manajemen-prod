@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "c73c537c-7cc8-4041-ba4b-cd0d9a3f9adb",
+		"name": "server_mongo_director",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48015909",
+		"_collection_link": "https://mborrr-3217735.postman.co/workspace/Belajar_API~0b65ed74-554c-4541-b1d3-4fb20a251215/collection/48015909-c73c537c-7cc8-4041-ba4b-cd0d9a3f9adb?action=share&source=collection_link&creator=48015909"
+	},
+	"item": [
+		{
+			"name": "director",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Masashi Kishimoto\",\r\n    \"birthYear\": 1974\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3300/Directors/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"Directors",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
