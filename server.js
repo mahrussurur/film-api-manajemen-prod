@@ -17,7 +17,7 @@ app.get('/status', (req, res) => {
     res.json({ ok: true, service: 'film-api' });
 });
 
-app.post('/auth/register', async (req, res) => {
+app.post('/auth/register', async (req, res, next) => {
     const { username, password } = req.body;
     if (!username || !password || password.length < 6) {
         return res.status(400).json({
@@ -31,7 +31,7 @@ app.post('/auth/register', async (req, res) => {
         const result = await db.query(sql, [username.toLowerCase(), hashedPassword, 'user']);
         res.status(201).json(result.rows[0]);
     } catch (err) {
-        if (err.code === '23505') { // Kode error unik PostgreSQL
+        if (err.code === '23505') {
             return res.status(409).json({ error: 'Username sudah digunakan' });
         }
         next(err);
